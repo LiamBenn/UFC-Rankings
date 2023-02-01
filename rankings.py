@@ -40,22 +40,6 @@ weight_class_rankings = {
     "w_strawweight": rankings(".kt-svg-icon-list-items_acf1a0-3a > ul:nth-child(1)")
     }
 
-weight_class_names = [
-    "m_p4p",
-    "m_heavyweight",
-    "m_light_heavyweight",
-    "m_middleweight",
-    "m_welterweight",
-    "m_lightweight",
-    "m_featherweight",
-    "m_bantamweight",
-    "m_flyweight",
-    "w_p4p",
-    "w_bantamweight",
-    "w_flyweight",
-    "w_strawweight"
-]
-
 error_message = "Weight Class Does Not Exist! Please Try Again or press CTRL+C to quit. "
 
 introduction = """
@@ -77,8 +61,8 @@ Womens Strawweight = w_strawweight \n"""
 
 try:
     if sys.argv[1].lower() == "all":
-        for i in weight_class_names:
-            print(f"\n{weight_class_rankings[i]}\n")
+        for key, value in weight_class_rankings.items():
+            print(f"\n{weight_class_rankings[key]}\n")
     else:        
         print(f"\n{weight_class_rankings[sys.argv[1]]}\n")
 except KeyError:
@@ -88,8 +72,8 @@ except IndexError:
     v = input("Please Enter A Weight Class: ")
     try:
         if v.lower() == "all":
-            for i in weight_class_names:
-                print(f"\n{weight_class_rankings[i]}\n")
+            for key, value in weight_class_rankings.items():
+                print(f"\n{weight_class_rankings[key]}\n")
         else:
             print(f"\n{weight_class_rankings[v]}\n")
     except KeyError:
